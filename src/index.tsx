@@ -8,6 +8,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import "./css/index.css";
 import theme from "./app/MaterialTheme";
+import { BrowserRouter as Router} from "react-router-dom";
 
 
 // const theme = createTheme();
@@ -17,7 +18,9 @@ ReactDOM.render(
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <App />
+        <Router>
+          <App />
+        </Router>
       </ThemeProvider>
     </Provider>
   </React.StrictMode>,
