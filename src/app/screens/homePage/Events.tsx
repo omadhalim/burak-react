@@ -1,8 +1,7 @@
 import { Box, Stack } from "@mui/material";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react"; // @ts-ignore
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
-import { plans } from "../../lib/data/plans";
-import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, Key } from "react";
+import { plans } from "../../../lib/data/plans";
 
 SwiperCore.use([Autoplay, Navigation, Pagination]);
 
@@ -32,7 +31,7 @@ export default function Events() {
             disableOnInteraction: true,
           }}
         >
-          {plans.map((value: { img: string | undefined; title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; author: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; desc: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; date: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; location: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; }, number: Key | null | undefined) => {
+          {plans.map((value, number) => {
             return (
               <SwiperSlide key={number} className={"events-info-frame"}>
                 <div className={"events-img"}>

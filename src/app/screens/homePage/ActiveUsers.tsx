@@ -1,5 +1,8 @@
-import React from "react";
-import { Box, Card, Container, Stack } from "@mui/material";
+import { Box, Container, Stack } from "@mui/material";
+import Card from "@mui/joy/Card";
+import { CssVarsProvider, Typography } from "@mui/joy";
+import CardOverflow from "@mui/joy/CardOverflow";
+import AspectRatio from "@mui/joy/AspectRatio";
 
 const activeUsers = [
   { memberNick: "Martin", memberImage: "/img/martin.webp" },
@@ -15,22 +18,28 @@ export default function ActiveUsers() {
         <Stack className={"main"}>
           <Box className={"category-title"}>Active Users</Box>
           <Stack className={"cards-frame"}>
-            {activeUsers.length !== 0 ? (
-              activeUsers.map((ele) => {
-                return (
-                  <Card
-                    key={ele.memberNick}
-                    variant="outlined"
-                    className={"card"}
-                  >
-                    <img src={ele.memberImage} alt="" />
-                    <Box className={"member-nickname"}>{ele.memberNick}</Box>
-                  </Card>
-                );
-              })
-            ) : (
-              <Box className={"no-data"}>No Active Users!</Box>
-            )}
+            <CssVarsProvider>
+              {activeUsers.length !== 0 ? (
+                activeUsers.map((ele, index) => {
+                  return (
+                    <Card key={index} variant="outlined" className={"card"}>
+                      <CardOverflow>
+                        <AspectRatio ratio="1">
+                          <img src={ele.memberImage} alt="" />
+                        </AspectRatio>
+                      </CardOverflow>
+                      <CardOverflow>
+                        <Typography className={"member-nickname"}>
+                          {ele.memberNick}
+                        </Typography>
+                      </CardOverflow>
+                    </Card>
+                  );
+                })
+              ) : (
+                <Box className="no-data">No Active Users!</Box>
+              )}
+            </CssVarsProvider>
           </Stack>
         </Stack>
       </Container>

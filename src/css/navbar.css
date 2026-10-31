@@ -20,30 +20,29 @@
 }
 
 .home-navbar .navbar-container .menu .brand-logo {
- width:125px;
- height: 30px;
+  width: 180px;
+  height: 40px;
 }
 
 .home-navbar .navbar-container .menu .links {
- min-width: 700px;
- display: flex;
- flex-direction: row;
- justify-content: space-between;
- align-items: center;
+  min-width: 700px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-
 
 .home-navbar .navbar-container .menu .links .login-button {
- background: #3776cc;
- color:#f8f8ff;
+  background: #3776cc;
+  color: #f8f8ff;
 }
-
 
 .home-navbar .navbar-container .menu .user-avatar {
-width: 50px;
-height:50px;
-border-radius:24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 24px;
 }
+
 .home-navbar a {
   text-decoration: none;
 }
@@ -55,7 +54,7 @@ border-radius:24px;
 
 .home-navbar .underline {
   display: block;
-  content: ""; 
+  content: "";
   border-bottom: solid 2px #d7b686;
 }
 
@@ -83,51 +82,47 @@ border-radius:24px;
   justify-content: space-between;
 }
 
-
-.home-navbar .navbar-container .header-frame .detail{
+.home-navbar .navbar-container .header-frame .detail {
   width: 510px;
-  display:flex;
+  display: flex;
   flex-direction: column;
 }
 
-.home-navbar .navbar-container .header-frame .detail .head-main-txt{
+.home-navbar .navbar-container .header-frame .detail .head-main-txt {
   width: 450px;
-height: 150px;
-font-family: "Roboto Serif";
-font-size: 50px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-letter-spacing: -0.75px;
-color: #f8f8ff;
+  height: 150px;
+  font-family: "Roboto Serif";
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.75px;
+  color: #f8f8ff;
 }
 
-
-.home-navbar .navbar-container .header-frame .detail .wel-txt{
+.home-navbar .navbar-container .header-frame .detail .wel-txt {
   width: 510px;
-height: 42px;
-font-family: "Roboto Serif";
-font-size: 36px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: -0.54px;
-color: #d7b686;
+  height: 42px;
+  font-family: "Roboto Serif";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.54px;
+  color: #d7b686;
 }
 
-
-.home-navbar .navbar-container .header-frame .detail .service-txt{
+.home-navbar .navbar-container .header-frame .detail .service-txt {
   margin-top: 23px;
   width: 153px;
-height: 23px;
-font-family: "Roboto Serif";
-font-size: 20px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: -0.3px;
-color: #d5d5d5;
-
+  height: 23px;
+  font-family: "Roboto Serif";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.3px;
+  color: #d5d5d5;
 }
 
 .home-navbar .navbar-container .detail .signup {
@@ -157,14 +152,11 @@ color: #d5d5d5;
 .home-navbar .navbar-container .logo-frame .logo-img {
   width: 100%;
   height: 100%;
-  background: url("/public/img/logo.webp");
+  background: url("/public/img/logo.png");
   background-size: contain;
   background-repeat: no-repeat;
   filter: invert(25%);
 }
-
-
-
 
 .other-navbar {
   width: 100%;
@@ -174,7 +166,7 @@ color: #d5d5d5;
   background-size: cover;
 }
 
-.other-navbarr .navbar-container {
+.other-navbar .navbar-container {
   margin-top: 55px;
 }
 
@@ -187,30 +179,29 @@ color: #d5d5d5;
 }
 
 .other-navbar .navbar-container .menu .brand-logo {
- width:125px;
- height: 30px;
+  width: 180px;
+  height: 40px;
 }
 
 .other-navbar .navbar-container .menu .links {
- min-width: 700px;
- display: flex;
- flex-direction: row;
- justify-content: space-between;
- align-items: center;
+  min-width: 700px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-
 
 .other-navbar .navbar-container .menu .links .login-button {
- background: #3776cc;
- color:#f8f8ff;
+  background: #3776cc;
+  color: #f8f8ff;
 }
-
 
 .other-navbar .navbar-container .menu .user-avatar {
-width: 50px;
-height:50px;
-border-radius:24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 24px;
 }
+
 .other-navbar a {
   text-decoration: none;
 }
@@ -222,7 +213,7 @@ border-radius:24px;
 
 .other-navbar .underline {
   display: block;
-  content: ""; 
+  content: "";
   border-bottom: solid 2px #d7b686;
 }
 
@@ -241,10 +232,6 @@ border-radius:24px;
 .other-navbar div.hover-line:after {
   transform-origin: 0% 50%;
 }
-
-
-
-
 
 /* BASKET */
 
@@ -380,9 +367,3 @@ border-radius:24px;
   display: flex;
   flex-direction: column;
 }
-
-
-
-
-
-

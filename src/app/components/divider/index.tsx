@@ -19,5 +19,3 @@ function Divider(props: IDividerProps) {
 }
 
 export default Divider;
-
-
