@@ -1,6 +1,7 @@
 import axios from "axios";
 import { serverApi } from "../../lib/config";
 import { Member } from "../../lib/types/member";
+import { Product } from "../../lib/types/product";
 
 class MemberService {
     private readonly path: string;
@@ -21,6 +22,32 @@ class MemberService {
             throw err;
         }
     }
+
+    public async getProduct(productId: string): Promise<Product> {
+  try {
+    const url = `${this.path}/product/${productId}`;
+    const result = await axios.get(url, { withCredentials: true });
+    console.log("getProduct:", result);
+
+    return result.data;
+  } catch (err) {
+    console.log("Error, getProduct:", err);
+    throw err;
+  }
+}
+public async getRestaurant(): Promise<Member> {
+  try {
+    const url = this.path + "/member/restaurant";
+    const result = await axios.get(url);
+    console.log("getRestaurant:", result);
+
+    const restaurant: Member = result.data;
+    return restaurant;
+  } catch (err) {
+    console.log("Error, getRestaurant:", err);
+    throw err;
+  }
+}
 }
 
 export default MemberService;
