@@ -1,25 +1,31 @@
 import { Member } from "./member";
-import { Product } from "./product";
+import { Order } from "./order";
+import { Product } from "./product";  
 
-
-/** REACT APP STATE  **/
+// REACT APP STATE
 export interface AppRootState {
+  ordersPage: any;
   homePage: HomePageState;
-  productsPage: ProductsPageState;
+  productsPage: ProductsPage; 
 }
 
-/** HOMEPAGE  **/
-export interface HomePageState {
-  popularDishes: Product[];
-  newDishes: Product[];
+// HOMEPAGE
+export interface HomePageState { 
+  popularDishes: Product[]; 
+  newDishes: Product[]; 
   topUsers: Member[];
 }
-
-/** PRODUCTS PAGE  **/
-export interface ProductsPageState {
-  restaurant: Member | null;
-  chosenProduct: Product | null;
-  products: Product[];
+ 
+// PRODUCTS PAGE
+export interface ProductsPage {
+  restaurant: Member | null; 
+  chosenProduct: Product |  null;
+  products: Product[]; 
 }
 
-/** ORDERS PAGE  **/
+// ORDERS PAGE
+export interface OrdersPageState { 
+  pausedOrders: Order[];
+  processOrders: Order[];
+  finishedOrders: Order[];
+} 

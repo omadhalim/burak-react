@@ -1,15 +1,19 @@
-import { ProductCollection, ProductSize, ProductStatus } from "../enums/product.enum";
+import {
+  ProductCollection,
+  ProductSize,
+  ProductStatus,
+} from "../enums/product.enum";
 
 export interface Product {
   _id: string;
   productStatus: ProductStatus;
-  productCollection: ProductCollection;
+  productCollection: ProductCollection; 
   productName: string;
   productPrice: number;
   productLeftCount: number;
   productSize: ProductSize;
   productVolume: number;
-  productDesc: string;
+  productDesc?: string;
   productImages: string[];
   productViews: number;
   createdAt: Date;

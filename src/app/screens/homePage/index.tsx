@@ -3,62 +3,70 @@ import Statistics from "./Statistics";
 import PopularDishes from "./PopularDishes";
 import NewDishes from "./NewDishes";
 import Advertisement from "./Advertisement";
-import ActiveUsers from "./ActiveUsers";
+import ActiveUsers from "./ActiveUser";
 import Events from "./Events";
 import { useDispatch, useSelector } from "react-redux";
 import { Dispatch } from "@reduxjs/toolkit";
 import { setNewDishes, setPopularDishes, setTopUsers } from "./slice";
 import { Product } from "../../../lib/types/product";
-import ProductService from "../../services/ProductService";
-import { ProductCollection } from "../../../lib/enums/product.enum";
-import "../../../css/home.css";
-import MemberService from "../../services/MemberService";
+import  ProductService  from "../../services/ProductService"
+import MemberService from "../../services/MemeberService";
 import { Member } from "../../../lib/types/member";
 
-/** REDUX SLICE & SELECTOR **/
+
+import { ProductCollection } from "../../../lib/enums/product.enum";
+import "../../../css/home.css";
+
+// REDUX SLICE & SELCTOR
 const actionDispatch = (dispatch: Dispatch) => ({
   setPopularDishes: (data: Product[]) => dispatch(setPopularDishes(data)),
-  setNewDishes: (data: Product []) => dispatch(setNewDishes(data)),
+  setNewDishes: (data: Product[]) => dispatch(setNewDishes(data)),
   setTopUsers: (data: Member[]) => dispatch(setTopUsers(data)),
 });
 
 export default function HomePage() {
-  const { setPopularDishes, setNewDishes,setTopUsers } = actionDispatch(useDispatch());
+  const { setPopularDishes, setNewDishes, setTopUsers } =
+    actionDispatch(useDispatch());
 
-  console.log(process.env.REACT_APP_API_URL);
+  useEffect(() => { //life sycle hosil qilish un  yani 3 hil  
+    const product = new ProductService();  // ins obj
 
-useEffect(() => {
-  // Backend derver data fetch => Data
-  const product = new ProductService();
-  product
-    .getProducts({
-      page: 1,
-      limit: 4,
-      order: "productViews",
-      productCollection: ProductCollection.DISH,
-    })
-    .then((data) => {
-      setPopularDishes(data);
-    })
-    .catch((err) =>  console.log( err));
+    // POPULAR DISHES
+    product // obj 
+      .getProducts({ //key va val meth  1
+        page: 1 ,
+        limit: 4,
+        order: "productViews",
+        productCollection: ProductCollection.DISH,
+      })
+      .then((data) => {
+        setPopularDishes(data); 
+      })
+      .catch((err) => console.log(err));
 
-     product
-    .getProducts({
-      page: 1,
-      limit: 4,
-      order: "createdAt",
-      // productCollection: ProductCollection.DISH,
-    })
-    .then((data) => {setNewDishes (data);})
-    .catch((err) =>  console.log( err));
+      console.log(process.env.REACT_APP_API_URL);
 
+    // NEW DISHES
+    product
+      .getProducts({
+        page: 1,
+        limit: 4,
+        order: "createdAt",
+      })
+      .then((data) => {
+        setNewDishes(data);
+      })
+      .catch((err) => console.log(err));
+
+    // TOP USERS
     const member = new MemberService();
     member
-    .getTopUsers()
-    .then(data => {setTopUsers(data);})
-    .catch((err) =>  console.log( err));
-  }, []);
-
+      .getTopUsers()
+      .then((data) => {
+        setTopUsers(data);
+      })
+      .catch((err) => console.log(err));
+  }, []); //[] array dependency mantiq bu DidUpdate
 
   return (
     <div className={"homepage"}>
@@ -68,6 +76,87 @@ useEffect(() => {
       <Advertisement />
       <ActiveUsers />
       <Events />
-    </div>
+    </div> 
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useEffect } from "react";
+// import Statistics from "./Statistics";
+// import PopularDishes from "./PopularDishes";
+// import NewDishes from "./NewDishes";
+// import Advertisement from "./Advertisement";
+// import ActiveUsers from "./ActiveUser";
+// import Events from "./Events";
+// import { useDispatch } from "react-redux";
+// import { Dispatch } from "@reduxjs/toolkit";
+// import { setNewDishes, setPopularDishes, setTopUsers } from "./slice";
+// import { Product } from "../../../lib/types/product";
+// import  ProductService  from "../../services/ProductService";
+// import { ProductCollection } from "../../../lib/enums/product.enum";
+// import { Member } from "../../../lib/types/memeber"
+// import MemberService from "../../services/MemeberService";
+// import "../../../css/home.css";
+
+// /**  REDUX SLICE &  SELECTOR **/
+// const actionDispatch = (dispatch: Dispatch ) => ({
+//   setPopularDishes: (data: Product[]) => dispatch(setPopularDishes(data)),
+//   setNewDishes: (data: Product[]) => dispatch(setNewDishes(data)),
+//   setTopUsers: (data: Member[]) => dispatch(setTopUsers(data))
+// });
+
+// export  default function HomePage() {
+//   const { setPopularDishes,  setNewDishes, setTopUsers } =  actionDispatch(useDispatch());
+   
+// //Select: Store =>  Data.
+
+// useEffect(() => {
+//   //Backedn server data fetch => Data
+//   const product = new ProductService();
+//   product
+//   .getProducts({
+//     page: 1,
+//     limit: 4,
+//     order: "productViews",
+//     productCollection: ProductCollection.DISH,
+//   })
+//   .then((data) => {
+//     setPopularDishes(data);
+//   })
+//   .catch((err) =>console.log(err));
+// //FRESH MENU
+//     product
+//   .getProducts({
+//     page: 1,
+//     limit: 4,
+//     order: "createdAt",
+//   /**productCollection: ProductCollection.DISH,**/ 
+//   })
+//   .then((data) =>  setNewDishes(data))
+//   .catch((err) => console.log(err));
+
+//    const member = new MemberService();
+//    member.getTopUsers()
+//    .then((data) =>  setTopUsers(data)
+//    .catch((err) => console.log(err));
+//   }, []);
+//   return ( 
+//     <div className={"homepage"}>
+//     <Statistics/>
+//     <PopularDishes/>
+//     <NewDishes/>
+//     <Advertisement/>
+//     <ActiveUsers/>
+//     <Events/>
+//     </div>
+//   );
+// } 

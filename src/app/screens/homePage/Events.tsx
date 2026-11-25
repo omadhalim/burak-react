@@ -1,7 +1,8 @@
 import { Box, Stack } from "@mui/material";
-import { Swiper, SwiperSlide } from "swiper/react"; // @ts-ignore
+import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
 import { plans } from "../../../lib/data/plans";
+import React from "react";
 
 SwiperCore.use([Autoplay, Navigation, Pagination]);
 
