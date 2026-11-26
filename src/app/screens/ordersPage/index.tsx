@@ -7,7 +7,7 @@ import PausedOrders from "./PausedOrders";
 import ProcessOrders from "./ProcessOrders";
 import FinishedOrders from "./FinishedOrders";
 import React from "react";
-import { TabContext, TabPanel } from "@mui/lab";
+import { TabContext } from "@mui/lab";
 import { useDispatch } from "react-redux";
 import { Dispatch } from "@reduxjs/toolkit";
 import { setPausedOrders, setProcessOrders, setFinishedOrders } from "./slice";
@@ -67,7 +67,7 @@ export default function OrdersPage() {
   return (
     <div className="order-page"> 
       <Container className="order-container"> 
-        <Stack direction="row" spacing={2}> 
+        <Stack direction="row" className="order-layout"> 
           {/* LEFT SIDE */} 
           <Stack className="order-left"> 
             <TabContext value={value}> 
@@ -87,17 +87,11 @@ export default function OrdersPage() {
               </Box> 
 
               <Stack className="order-main-content"> 
-                <TabPanel value="1"> 
-                  <PausedOrders setValue={setValue} /> 
-                </TabPanel> 
+                <PausedOrders setValue={setValue} /> 
  
-                <TabPanel value="2"> 
-                  <ProcessOrders setValue={setValue} /> 
-                </TabPanel>  
+                <ProcessOrders setValue={setValue} />  
 
-                <TabPanel value="3"> 
-                  <FinishedOrders /> 
-                </TabPanel> 
+                <FinishedOrders /> 
               </Stack> 
             </TabContext> 
           </Stack> 
@@ -122,7 +116,7 @@ export default function OrdersPage() {
                 </div> 
               </Box> 
  
-              <span className="order-user-name">Jacob</span>
+              <span className="order-user-name">Martin</span>
               <span className="order-user-prof">User</span>
  
               <Box className="liner"></Box> 

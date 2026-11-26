@@ -1,14 +1,28 @@
 import React from "react";
 import { Box, Container, Stack } from "@mui/material";
 import { Link } from "react-router-dom";
-import styled from "styled-components"; //bular orqali costumized  componentlarimizni qurishimiz mimkin
+import styled from "styled-components";
+import BurakLogo from "../brand/BurakLogo"; //bular orqali costumized  componentlarimizni qurishimiz mimkin
 
 const Footers = styled.div`
   width: 100%;
   height: 590px;
   display: flex;
-  background: #343434;
-  background-size: cover;
+  position: relative;
+  background: radial-gradient(ellipse at 20% 0%, rgba(122, 23, 23, 0) 0%, rgba(18, 3, 3, 0.78) 80%),
+    url("/brand/tile-dark.svg");
+  background-size: auto, 150px;
+  background-color: #4e0c0c;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 18px;
+    background: url("/brand/tile-light.svg");
+    background-size: 18px;
+  }
 `;
 
 export default function Footer() {
@@ -20,12 +34,11 @@ export default function Footer() {
         <Stack flexDirection={"row"} sx={{ mt: "94px" }}>
           <Stack flexDirection={"column"} style={{ width: "340px" }}>
             <Box>
-              <img width={"100px"} src={"/icons/burak.svg"} />
+              <BurakLogo size="md" subtitle="Mazali taomlar manzili" />
             </Box>
             <Box className={"foot-desc-txt"}>
-              Focusing on the gourmet Turkish breakfast as well as the youth
-              society, CZN Burak Gurme aims to bring Turkish cuisine back. CZN
-              Burak Gurme creates an illusion with its cuisine.
+              Burak — mazali taomlar manzili. Sharq oshxonasining eng sara
+              taomlarini nafis muhitda, iliq mehmondo'stlik bilan taqdim etamiz.
             </Box>
             <Box className="sns-context">
               <img src={"/icons/facebook.svg"} />

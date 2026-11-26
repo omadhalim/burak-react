@@ -1,0 +1,526 @@
+/* =========================================================
+   BURAK THEME — burgundy & cream majolica identity
+   Loaded last (see App.tsx) so it refines the older styles.
+   ========================================================= */
+
+:root {
+  --burgundy: #7a1717;
+  --burgundy-deep: #4e0c0c;
+  --burgundy-ink: #2a0b0b;
+  --cream: #f3e7d5;
+  --cream-soft: #f7f0e6;
+  --cream-deep: #ece0cd;
+  --gold: #e4c894;
+  --gold-deep: #c9a46a;
+  --muted: #6b4b45;
+
+  --font-display: "Federo", "Cormorant Garamond", serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-script: "Parisienne", cursive;
+  --font-sans: "Jost", "Segoe UI", sans-serif;
+
+  --hero-bg: radial-gradient(
+      ellipse at 30% 35%,
+      rgba(122, 23, 23, 0) 0%,
+      rgba(22, 4, 4, 0.7) 78%
+    ),
+    url("../assets/brand/tile-dark.svg");
+}
+
+body {
+  background: var(--cream-soft);
+  color: var(--burgundy-ink);
+  font-family: var(--font-sans);
+}
+
+/* ---------- Wordmark ---------- */
+.burak-logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+.burak-logo__word {
+  font-family: var(--font-display);
+  letter-spacing: 0.18em;
+  padding-left: 0.18em; /* optically centre the tracked letters */
+}
+.burak-logo__sub {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+}
+.burak-logo__rule {
+  display: inline-block;
+  width: 26px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.7;
+}
+.burak-logo--sm .burak-logo__word { font-size: 24px; }
+.burak-logo--md .burak-logo__word { font-size: 34px; }
+.burak-logo--lg .burak-logo__word { font-size: 56px; }
+.burak-logo--xl .burak-logo__word { font-size: 84px; }
+.burak-logo--cream { color: var(--cream); }
+.burak-logo--burgundy { color: var(--burgundy); }
+
+/* ---------- Shared navbar (home + other) ---------- */
+.home-navbar,
+.other-navbar {
+  position: relative;
+  background: var(--hero-bg);
+  background-size: auto, 150px;
+  background-color: var(--burgundy-deep);
+}
+.home-navbar::after,
+.other-navbar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 18px;
+  background: url("../assets/brand/tile-light.svg");
+  background-size: 18px;
+  opacity: 0.95;
+}
+.home-navbar .navbar-container,
+.other-navbar .navbar-container {
+  margin-top: 34px;
+}
+.home-navbar .navbar-container .menu,
+.other-navbar .navbar-container .menu {
+  height: 64px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(243, 231, 213, 0.16);
+}
+.home-navbar .navbar-container .menu a:first-child,
+.other-navbar .navbar-container .menu a:first-child {
+  display: inline-flex;
+}
+.home-navbar .navbar-container .menu .links,
+.other-navbar .navbar-container .menu .links {
+  min-width: 0;
+  justify-content: flex-end;
+  gap: 34px;
+}
+.home-navbar .hover-line a,
+.other-navbar .hover-line a {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+.home-navbar .hover-line:after,
+.other-navbar .hover-line:after {
+  margin-top: 6px;
+  border-bottom: 1px solid var(--gold);
+  transform-origin: 0% 50%;
+}
+.other-navbar .hover-line:hover:after {
+  transform: scaleX(1);
+}
+.home-navbar .navbar-container .menu .links .login-button,
+.other-navbar .navbar-container .menu .links .login-button {
+  padding: 8px 26px;
+  border: 1px solid var(--gold);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--cream);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+}
+.home-navbar .navbar-container .menu .links .login-button:hover,
+.other-navbar .navbar-container .menu .links .login-button:hover {
+  background: var(--gold);
+  color: var(--burgundy-ink);
+}
+.home-navbar .navbar-container .menu .links .user-avatar,
+.other-navbar .navbar-container .menu .user-avatar {
+  width: 46px;
+  height: 46px;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* ---------- Home hero ---------- */
+/* Original food photo, warmed with a soft burgundy veil */
+.home-navbar {
+  height: 760px;
+  background: linear-gradient(
+      90deg,
+      rgba(42, 7, 7, 0.88) 0%,
+      rgba(42, 7, 7, 0.55) 55%,
+      rgba(42, 7, 7, 0.35) 100%
+    ),
+    url("/public/img/banner.webp");
+  background-size: cover;
+  background-position: center;
+}
+.home-navbar .navbar-container {
+  height: auto;
+}
+.home-navbar .navbar-container .header-frame {
+  margin-top: 96px;
+  height: auto;
+  align-items: center;
+  gap: 48px;
+}
+.home-navbar .navbar-container .header-frame .detail {
+  width: 500px;
+}
+.home-navbar .navbar-container .header-frame .detail .head-main-txt {
+  width: auto;
+  height: auto;
+  font-family: var(--font-serif);
+  font-size: 62px;
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: 0;
+  color: var(--cream);
+}
+.home-navbar .navbar-container .header-frame .detail .wel-txt {
+  width: auto;
+  height: auto;
+  margin-top: 18px;
+  font-family: var(--font-script);
+  font-size: 40px;
+  letter-spacing: 0;
+  color: var(--gold);
+}
+.home-navbar .navbar-container .header-frame .detail .service-txt {
+  width: auto;
+  height: auto;
+  margin-top: 22px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(243, 231, 213, 0.72);
+}
+.home-navbar .navbar-container .detail .signup {
+  margin-top: 44px;
+}
+.home-navbar .navbar-container .detail .signup-button {
+  width: 220px;
+  height: 56px;
+  border-radius: 0;
+  background: var(--cream);
+  box-shadow: none;
+  color: var(--burgundy);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  letter-spacing: 0.22em;
+}
+.home-navbar .navbar-container .detail .signup-button:hover {
+  background: var(--gold);
+}
+
+/* Original CZN Burak Gurme logo, true colours with a soft glow */
+.home-navbar .navbar-container .logo-frame {
+  margin-top: 0;
+  width: 600px;
+  height: 400px;
+}
+.home-navbar .navbar-container .logo-frame .logo-img {
+  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.55));
+}
+
+/* ---------- Other pages header ---------- */
+.other-navbar {
+  height: 330px;
+}
+.other-navbar .other-hero {
+  margin-top: 52px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------- Home sections ---------- */
+.homepage .static-frame {
+  display: flex;
+  align-items: center;
+  background: var(--burgundy-deep);
+}
+.homepage .static-frame .info .static-box .static-num {
+  font-family: var(--font-serif);
+  font-size: 58px;
+  font-weight: 500;
+  color: var(--gold);
+}
+.homepage .static-frame .info .static-box .static-text {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(243, 231, 213, 0.8);
+}
+
+.homepage .popular-dishes-frame,
+.homepage .events-frame {
+  background: var(--cream-soft);
+}
+.homepage .new-products-frame,
+.homepage .active-users-frame {
+  background: var(--cream-deep);
+}
+.homepage .active-users-frame {
+  padding: 64px 0 72px;
+}
+.homepage .popular-dishes-frame .popular-section .category_title,
+.homepage .category-title,
+.homepage .events-frame .category-title {
+  font-family: var(--font-serif);
+  font-size: 44px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--burgundy);
+}
+.homepage .popular-dishes-frame .popular-section .category_title::after,
+.homepage .category-title::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 1px;
+  margin: 14px auto 0;
+  background: var(--burgundy);
+  opacity: 0.6;
+}
+.homepage .active-users-frame .category-title::after {
+  margin-left: 0;
+}
+.homepage .no-data {
+  font-family: var(--font-serif);
+  color: var(--muted);
+}
+.homepage .user-card {
+  background: var(--cream-soft);
+  border: 1px solid rgba(122, 23, 23, 0.12);
+  border-radius: 0;
+  box-shadow: 0 10px 24px rgba(58, 10, 10, 0.08);
+}
+.homepage .user-name {
+  font-family: var(--font-serif);
+  font-size: 19px;
+  color: var(--burgundy-ink);
+}
+
+/* ---------- Brand showcase ---------- */
+.brand-showcase {
+  padding: 110px 0 120px;
+  background: var(--cream-soft);
+  border-top: 1px solid rgba(122, 23, 23, 0.12);
+}
+.brand-showcase__head {
+  max-width: 640px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+.brand-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+}
+.brand-title {
+  margin: 14px 0 14px;
+  font-family: var(--font-serif);
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--burgundy-ink);
+}
+.brand-lead {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--muted);
+}
+.brand-showcase__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+}
+.brand-card {
+  margin: 0;
+}
+.brand-card__art {
+  aspect-ratio: 300 / 380;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(58, 10, 10, 0.16);
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+.brand-card__art svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.brand-card:hover .brand-card__art {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 50px rgba(58, 10, 10, 0.24);
+}
+.brand-card figcaption {
+  margin-top: 18px;
+}
+.brand-card__title {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 25px;
+  font-weight: 500;
+  color: var(--burgundy);
+}
+.brand-card__text {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--muted);
+}
+@media (max-width: 1000px) {
+  .brand-showcase__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .brand-showcase {
+    padding: 72px 0 80px;
+  }
+  .brand-title {
+    font-size: 36px;
+  }
+  .brand-showcase__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Footer ---------- */
+.foot-desc-txt {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: rgba(243, 231, 213, 0.75);
+}
+.foot-category-title {
+  width: auto;
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--cream);
+}
+.foot-category-link a,
+.find-us,
+.find-us div {
+  color: rgba(243, 231, 213, 0.75);
+}
+.foot-category-link a:hover {
+  color: var(--gold);
+}
+.find-us span {
+  color: var(--gold);
+}
+.copyright-txt {
+  color: rgba(243, 231, 213, 0.55);
+}
+
+/* ---------- Other pages: warm cream canvas ---------- */
+.products-page,
+.products-page .products,
+.order-page,
+.help-page,
+.user-page {
+  background: var(--cream-soft);
+}
+
+/* ---------- Section rhythm: content-driven heights ---------- */
+.homepage .static-frame {
+  height: auto;
+  padding: 56px 0;
+}
+.homepage .popular-dishes-frame,
+.homepage .new-products-frame {
+  height: auto;
+  padding-bottom: 88px;
+}
+.homepage .new-products-frame .category-title {
+  font-family: var(--font-serif);
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--burgundy);
+}
+.homepage .new-products-frame .product-sale {
+  margin-left: 10px;
+  width: auto;
+  padding: 0 12px;
+  height: 26px;
+  border-radius: 0;
+  background: var(--burgundy);
+  box-shadow: none;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+.homepage .new-products-frame .product-detail {
+  background-color: var(--cream-soft);
+  border-color: rgba(122, 23, 23, 0.12);
+}
+.homepage .new-products-frame .product-detail .title {
+  width: auto;
+  max-width: 130px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: var(--font-serif);
+  font-size: 18px;
+  color: var(--burgundy-ink);
+}
+.homepage .new-products-frame .product-detail .price {
+  width: auto;
+  color: var(--burgundy);
+}
+
+/* ---------- Products page ---------- */
+.products-page .products .avatar-big-box .category-title {
+  font-family: var(--font-serif);
+  font-size: 46px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--burgundy);
+}
+.products-page .products .product-wrapper .product-sale,
+.products-page .products .product-sale {
+  border-radius: 0;
+  background: var(--burgundy);
+  box-shadow: none;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--cream);
+}
+.products-page .products .product-desc .product-title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--burgundy-ink);
+}

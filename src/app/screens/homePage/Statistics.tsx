@@ -19,14 +19,14 @@ export default function Statistics() {
             <Box className="static-text">Expirence</Box>
           </Stack>
 
-          <Devider height="64" width="2" bg="#03c703ff" />
+          <Devider height="64" width="2" bg="#E3C08D" />
 
           <Stack className="static-box">
             <Box className="static-num">50+</Box>
             <Box className="static-text">Menu</Box>
           </Stack>
 
-          <Devider height="64" width="2" bg="#097327ff" />
+          <Devider height="64" width="2" bg="#E3C08D" />
 
           <Stack className="static-box">
             <Box className="static-num">200+</Box>

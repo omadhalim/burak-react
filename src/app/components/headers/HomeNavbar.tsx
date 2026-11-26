@@ -14,6 +14,7 @@ import { CartItem } from "../../../lib/types/search";
 import { useGlobals } from "../../hooks/useGlobal";
 import { serverApi } from "../../../lib/config";
 import { Logout } from "@mui/icons-material";
+import BurakLogo from "../brand/BurakLogo";
 
 interface HomeNavbarProps {
   cartItems: CartItem[];
@@ -74,7 +75,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
         <Stack className="menu">
           <Box>
             <NavLink to="/">
-              <img className="brand-logo" src="/icons/burak.svg" /> 
+              <BurakLogo size="sm" /> 
             </NavLink> 
           </Box> 
           <Stack className="links"> 
@@ -184,10 +185,10 @@ export default function HomeNavbar(props: HomeNavbarProps) {
         <Stack className={"header-frame"}> 
           <Stack className={"detail"}> 
             <Box className={"head-main-txt"}> 
-              World's Most Delicious Causine 
+              Burak — mazali taomlar manzili 
             </Box>{" "} 
             {/*oxirgi induvudial bogin shuning uchun box(Stack emas) */} 
-            <Box className={"wel-txt"}> The Choice , not just a choice </Box> 
+            <Box className={"wel-txt"}> Xush Kelibsiz</Box> 
             <Box className={"service-txt"}> 24 hours service</Box> 
             <Box className={"signup"}> 
               {!authMember ? ( 
@@ -203,7 +204,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
             </Box>   
           </Stack>  
           <Box className={"logo-frame"}> 
-            <div className={"logo-img"}></div> 
+            <div className={"logo-img"}></div>
           </Box> 
         </Stack> 
       </Container> 

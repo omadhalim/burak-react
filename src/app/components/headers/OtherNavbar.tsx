@@ -1,4 +1,5 @@
 import { Logout } from "@mui/icons-material";
+import BurakLogo from "../brand/BurakLogo";
 import {
   Box,
   Button,
@@ -50,7 +51,7 @@ export default function OtherNavbar(props: OtherNavbarProps) {
         <Stack className="menu">
           <Box>
             <NavLink to="/">
-              <img className="brand-logo" src="/icons/burak.svg" />
+              <BurakLogo size="sm" />
             </NavLink>
           </Box>
           <Stack className="links">
@@ -155,6 +156,9 @@ export default function OtherNavbar(props: OtherNavbarProps) {
             </Menu>
           </Stack>
         </Stack>
+        <div className="other-hero">
+          <BurakLogo size="lg" subtitle="Mazali taomlar manzili" />
+        </div>
       </Container>
     </div>
   );

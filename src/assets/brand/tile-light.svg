@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="160" height="160" viewBox="0 0 160 160">
+  <defs>
+    <path id="petal" d="M0 -44 C 11 -35 11 -19 0 -11 C -11 -19 -11 -35 0 -44 Z"/>
+    <path id="leaf" d="M0 0 C 9 8 9 20 0 27 C -9 20 -9 8 0 0 Z"/>
+    <g id="lobes">
+      <circle cx="22" cy="0" r="15"/><circle cx="-22" cy="0" r="15"/>
+      <circle cx="0" cy="22" r="15"/><circle cx="0" cy="-22" r="15"/>
+      <use xlink:href="#leaf" transform="rotate(45) translate(0 26)"/>
+      <use xlink:href="#leaf" transform="rotate(135) translate(0 26)"/>
+      <use xlink:href="#leaf" transform="rotate(225) translate(0 26)"/>
+      <use xlink:href="#leaf" transform="rotate(315) translate(0 26)"/>
+    </g>
+    <g id="corner">
+      <use xlink:href="#lobes" fill="#7A1717"/>
+      <circle r="12" fill="#F3E7D5"/><circle r="5" fill="#7A1717"/>
+      <circle r="58" fill="none" stroke="#7A1717" stroke-width="3"/>
+    </g>
+  </defs>
+  <rect width="160" height="160" fill="#F3E7D5"/>
+  <use xlink:href="#corner"/>
+  <use xlink:href="#corner" transform="translate(160 0)"/>
+  <use xlink:href="#corner" transform="translate(0 160)"/>
+  <use xlink:href="#corner" transform="translate(160 160)"/>
+  <g fill="#7A1717" transform="translate(80 80)">
+    <use xlink:href="#petal"/>
+    <use xlink:href="#petal" transform="rotate(45)"/>
+    <use xlink:href="#petal" transform="rotate(90)"/>
+    <use xlink:href="#petal" transform="rotate(135)"/>
+    <use xlink:href="#petal" transform="rotate(180)"/>
+    <use xlink:href="#petal" transform="rotate(225)"/>
+    <use xlink:href="#petal" transform="rotate(270)"/>
+    <use xlink:href="#petal" transform="rotate(315)"/>
+    <circle r="8" fill="#F3E7D5"/>
+    <circle r="3.5"/>
+  </g>
+  <g fill="#7A1717">
+    <circle cx="80" cy="5" r="3"/><circle cx="80" cy="155" r="3"/>
+    <circle cx="5" cy="80" r="3"/><circle cx="155" cy="80" r="3"/>
+  </g>
+  <rect x="0.5" y="0.5" width="159" height="159" fill="none" stroke="rgba(60,10,10,0.10)" stroke-width="1"/>
+</svg>

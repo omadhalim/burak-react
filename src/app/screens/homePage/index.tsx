@@ -5,6 +5,7 @@ import NewDishes from "./NewDishes";
 import Advertisement from "./Advertisement";
 import ActiveUsers from "./ActiveUser";
 import Events from "./Events";
+import BrandShowcase from "./BrandShowcase";
 import { useDispatch, useSelector } from "react-redux";
 import { Dispatch } from "@reduxjs/toolkit";
 import { setNewDishes, setPopularDishes, setTopUsers } from "./slice";
@@ -74,6 +75,7 @@ export default function HomePage() {
       <PopularDishes />
       <NewDishes />
       <Advertisement />
+      <BrandShowcase />
       <ActiveUsers />
       <Events />
     </div> 
